@@ -90,13 +90,13 @@ body {
   z-index: 1;
   width: 95%;
   top: 0;
+  background: #fff;
   /*nav btn*/
 }
 
 @media screen and (max-width: 400px) {
   .header__nav {
     width: 100%;
-    background: #fff;
   }
 }
 
@@ -132,16 +132,16 @@ body {
   }
 }
 
-.header__nav-title--sp {
-  display: none;
+.header__nav-title {
+  margin-right: auto;
+  padding: 20px 0 19px 64px;
+  font-size: 32px;
+  font-family: 'Didact Gothic', sans-serif;
+  color: #696969;
 }
 
 @media screen and (max-width: 400px) {
-  .header__nav-title--sp {
-    display: block;
-    font-size: 32px;
-    font-family: 'Didact Gothic', sans-serif;
-    color: #696969;
+  .header__nav-title {
     padding: 10px 4px 9px 18px;
   }
 }
@@ -776,6 +776,18 @@ main {
   text-decoration: none;
   font-size: 14px;
   font-family: Segoe UI;
+}
+
+.footer-right__menu-item::after {
+  content: "｜";
+  width: 2px;
+  display: inline-block;
+  position: relative;
+  right: -15px;
+}
+
+.footer-right__menu-item:last-of-type::after {
+  display: none;
 }
 
 @media screen and (max-width: 400px) {

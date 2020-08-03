@@ -98,9 +98,9 @@ body {
     z-index: 1;
     width: 95%;
     top: 0;
+    background: $sb-color;
     @include mq() {
       width: 100%;
-      background: $sb-color;
     }
     /*nav btn*/
     &-btn {
@@ -128,14 +128,14 @@ body {
         }
     }
   }
-  &-title--sp {
-    display: none;
-    @include mq() {
-      display: block;
+  &-title {
+    margin-right: auto;
+    padding: 20px 0 19px 64px;
     font-size: 32px;
     font-family: 'Didact Gothic', sans-serif;
     color: #696969;
-    padding: 10px 4px 9px 18px;
+    @include mq() {
+      padding: 10px 4px 9px 18px;
     }
   }
   }
@@ -639,6 +639,16 @@ main {
       text-decoration: none;
       font-size: 14px;
       font-family: Segoe UI;
+      &::after {
+        content:"｜";
+        width: 2px;
+        display: inline-block;
+        position: relative;
+        right: -15px;
+      }      
+     &:last-of-type::after {
+          display: none;
+          }
       @include mq() {
         display: block;
         padding-right: 0;
