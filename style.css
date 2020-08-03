@@ -5,6 +5,70 @@
           box-sizing: border-box;
 }
 
+/*共通buttonの実装*/
+.button {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 54px;
+  outline: none;
+  z-index: 2;
+  line-height: 50px;
+  overflow: hidden;
+}
+
+.button::before, .button::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+
+.button, .button::before, .button::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.button:hover {
+  color: #405E2D;
+}
+
+.button::after {
+  left: -100%;
+  width: 100%;
+  height: 100%;
+}
+
+.button:hover::after {
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.button:not(hover)::after {
+  top: 0;
+  right: 0;
+  background-color: #405E2D;
+}
+
+.button--wrap {
+  padding-left: 64px;
+}
+
+@media screen and (max-width: 400px) {
+  .button--wrap {
+    max-width: 400px;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+/*ここまで*/
 body {
   max-width: 1280px;
   font-family: 游ゴシック;
@@ -37,49 +101,16 @@ body {
 }
 
 .header__nav-btn {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  line-height: 54px;
-  outline: none;
-  z-index: 2;
   background-color: #405E2D;
   border: 2px solid #fff;
   color: #fff;
-  line-height: 50px;
-  overflow: hidden;
-}
-
-.header__nav-btn::before, .header__nav-btn::after {
-  position: absolute;
-  z-index: -1;
-  display: block;
-  content: '';
-}
-
-.header__nav-btn, .header__nav-btn::before, .header__nav-btn::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all .3s;
-  transition: all .3s;
 }
 
 .header__nav-btn:hover {
   color: #405E2D;
 }
 
-.header__nav-btn::after {
-  left: -100%;
-  width: 100%;
-  height: 100%;
-}
-
 .header__nav-btn:hover::after {
-  top: 0;
-  left: 0;
   background-color: #fff;
 }
 
@@ -607,13 +638,32 @@ main {
 .service__btn, .contact__btn {
   border: 1px solid #2A2A2A;
   display: block;
-  padding: 20px 60px;
   text-decoration: none;
   color: #2A2A2A;
+  background-color: #FDEC01;
+  color: #405E2D;
+  width: 250px;
+  height: 60px;
+  line-height: 60px;
+  z-index: 0;
 }
 
 .service__btn:first-of-type, .contact__btn:first-of-type {
   margin-bottom: 41px;
+}
+
+.service__btn:hover, .contact__btn:hover {
+  color: #fff;
+}
+
+.service__btn:hover::after, .contact__btn:hover::after {
+  background-color: #2A2A2A;
+}
+
+.service__btn:not(hover)::after, .contact__btn:not(hover)::after {
+  top: 0;
+  right: 0;
+  background-color: #fDEC01;
 }
 
 .service__btn--wrap {
@@ -644,8 +694,12 @@ main {
 }
 
 .contact__btn {
-  padding: 20px 43px;
+  background: #fff;
   font-size: 16px;
+}
+
+.contact__btn:not(hover)::after {
+  background-color: #fff;
 }
 
 .contact__btn--wrap {
