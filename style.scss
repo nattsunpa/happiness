@@ -619,19 +619,35 @@ main {
     font-family: 'Didact Gothic', sans-serif;
     font-size: 28px;
     padding: 19px 0 46px 64px;
+    font-weight: bold;
     @include mq() {
-      padding: 41px 130px;
+      padding: 0;
+      padding-top: 41px;
       }
     }
   
   &-right {
     &__menu {
     padding: 26px 30px 13px 0;
+    @include mq() {
+      padding: 0;
+      padding-bottom: 40px;
+      }
     &-item {
       padding-right: 34px;
       color: $sb-color;
       text-decoration: none;
       font-size: 14px;
+      font-family: Segoe UI;
+      @include mq() {
+        display: block;
+        padding-right: 0;
+        padding-top: 22px;
+        &:first-of-type {
+          padding-top: 40px;
+        }
+        
+        }
     }
   }
   &__foot-txt {
@@ -640,7 +656,7 @@ main {
     font-size: 12px;
   }
   @include mq() {
-    display: none;
+    
   }
 }
 &__outer {

@@ -749,11 +749,13 @@ main {
   font-family: 'Didact Gothic', sans-serif;
   font-size: 28px;
   padding: 19px 0 46px 64px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 400px) {
   .footer-left__title {
-    padding: 41px 130px;
+    padding: 0;
+    padding-top: 41px;
   }
 }
 
@@ -761,23 +763,36 @@ main {
   padding: 26px 30px 13px 0;
 }
 
+@media screen and (max-width: 400px) {
+  .footer-right__menu {
+    padding: 0;
+    padding-bottom: 40px;
+  }
+}
+
 .footer-right__menu-item {
   padding-right: 34px;
   color: #fff;
   text-decoration: none;
   font-size: 14px;
+  font-family: Segoe UI;
+}
+
+@media screen and (max-width: 400px) {
+  .footer-right__menu-item {
+    display: block;
+    padding-right: 0;
+    padding-top: 22px;
+  }
+  .footer-right__menu-item:first-of-type {
+    padding-top: 40px;
+  }
 }
 
 .footer-right__foot-txt {
   padding: 0 64px 26px 0;
   text-align: right;
   font-size: 12px;
-}
-
-@media screen and (max-width: 400px) {
-  .footer-right {
-    display: none;
-  }
 }
 
 .footer__outer {
